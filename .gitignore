@@ -1,2 +1,5 @@
 # pyenv files
 .python-version
+
+# Database
+*.tsv
