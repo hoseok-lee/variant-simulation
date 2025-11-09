@@ -4,10 +4,11 @@
 
 # Solution
 
-The "ground-truth" distribution can be simulated by generating individuals by
+The "ground-truth" distribution can be simulated by generating individuals,
 iterating through the entire list of variants, sampling a uniform distribution
-for each variant to determine whether the variant is present in the individual,
-and creating histogram of the total sum of variants.
+for each variant to determine whether the variant is present in the individual
+(individual Bernoulli tests) and creating a histogram of the total sum of
+variants with successful tests.
 
 Considering each variant $X_i$ to be binomial distribution of exactly one test
 (i.e. does the patient exhibit this variant or no?) with probability $p_i$ of
@@ -34,5 +35,5 @@ python get_mafs.py 10000 --outfile mafs.tsv
 To perform simulations with ten thousand patients, use
 
 ```
-python simulate.py
+python simulate.py 10000 --mafs mafs.tsv
 ```
