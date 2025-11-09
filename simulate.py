@@ -79,25 +79,33 @@ def normal_test(
     return mu, std, res, p, dist
 
 
-mafs = pd.read_csv(
-    "mafs.tsv",
-    delimiter = "\t",
-    index_col = 0
-)
+# Parse arguments
+if __name__ == "__main__":
 
-n_patients = 50000
+    import argparse
 
-mu_b, std_b, res_b, p_b, dist_b = bernoulli_test(mafs, n_patients)
-mu_n, std_n, res_n, p_n, dist_n = normal_test(mafs, n_patients, dist_b)
+    parser = argparse.ArgumentParser()
+    parser.add_argument("n", help="number of patients to use during simulation", type=int)
+    parser.add_argument("-m", "--mafs", help="path to TSV file containing minor allele frequencies", type=str, required=True)
+    args = parser.parse_args()
 
-df = pd.DataFrame(
-    {
-        'mean':     [mu_b, mu_n],
-        'std':      [std_b, std_n],
-        'ks_test':  [res_b, res_n],
-        'pvalue':   [p_b, p_n]
-    },
-    index = ["bernoulli", "normal"]
-)
+    mafs = pd.read_csv(
+        args.mafs,
+        delimiter = "\t",
+        index_col = 0
+    )
 
-print(df)
+    mu_b, std_b, res_b, p_b, dist_b = bernoulli_test(mafs, args.n)
+    mu_n, std_n, res_n, p_n, dist_n = normal_test(mafs, args.n, dist_b)
+
+    df = pd.DataFrame(
+        {
+            'mean':     [mu_b, mu_n],
+            'std':      [std_b, std_n],
+            'ks_test':  [res_b, res_n],
+            'pvalue':   [p_b, p_n]
+        },
+        index = ["bernoulli", "normal"]
+    )
+
+    print(df)
