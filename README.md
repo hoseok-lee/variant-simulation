@@ -24,6 +24,16 @@ Due to the Central Limit Theorem (CTL), the total number of variants any
 individual carries is normally distributed with mean $\mu$ and variance
 $\sigma^2$.
 
+The program runs two simulations: (1) the "ground-truth" with repeated Bernoulli
+tests for each individual variant and a KS-test for normality against the
+normal distribution with mean and variance from the "ground-truth" simulated
+distribution, and (2) a normal distribution with mean and variance from the
+proposed solution above and a KS-test for similarity against the "ground-truth"
+distribution. The first KS-test checks whether the Central Limit Theorem is
+applicable. The second KS-test checks whether the proposed solution is similar
+to the "ground-truth". With a large enough sample size $n > 1000$, both KS-tests
+prove similarity with significance $\alpha < 0.05$.
+
 # Usage
 
 To retrive ten thousand minor allele frequencies from Ensembl BioMart, use
