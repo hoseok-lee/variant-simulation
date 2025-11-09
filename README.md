@@ -14,10 +14,10 @@ Considering each variant $X_i$ to be binomial distribution of exactly one test
 success, the [mean and variance](https://en.wikipedia.org/wiki/Binomial_distribution#Expected_value_and_variance)
 of $X_i$ is $\mu_i = p_i$ and $\sigma_i^2 = p_i (1 - p_i)$. Further considering
 each of these random variables to be independent, the sum of all variants
-$X = \sum_i^n X_i$ will have a mean and variance of
+$X = \sum X_i$ will have a mean and variance of
 
-$$\mu = \sum_i^n \mu_i = \sum_i^n p_i$$
-$$\sigma^2 = \sum_i^n \sigma_i = \sum_i^n p_i (1 - p_i)$$
+$$\mu = \sum \mu_i = \sum p_i$$
+$$\sigma^2 = \sum \sigma_i^2 = \sum p_i (1 - p_i)$$
 
 Due to the Central Limit Theorem (CTL), the total number of variants any
 individual carries is normally distributed with mean $\mu$ and variance
