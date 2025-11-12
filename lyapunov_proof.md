@@ -36,8 +36,8 @@ $$
 \begin{align*}
 \frac{r_n}{s_n} &\le \frac{\sqrt[3]{n}}{\sqrt{n \alpha (1 - \alpha)}} \\
 \lim_{n \to \infty} \frac{r_n}{s_n} &\le \lim_{n \to \infty} \frac{\sqrt[3]{n}}{\sqrt{n \alpha (1 - \alpha)}} \\
-&\le \lim_{n \to \infty} \frac{1}{\sqrt{\alpha (1 - \alpha)}} \cdot \frac{n^{1/3}}{n^{1/2}} \\
-&\le \lim_{n \to \infty} \frac{1}{\sqrt{\alpha (1 - \alpha)}} \cdot \frac{1}{n^{1 / 6}} \\
+&\le \frac{1}{\sqrt{\alpha (1 - \alpha)}} \lim_{n \to \infty} \frac{n^{1/3}}{n^{1/2}} \\
+&\le \frac{1}{\sqrt{\alpha (1 - \alpha)}} \lim_{n \to \infty} \frac{1}{n^{1 / 6}} \\
 &\le 0
 \end{align*}
 $$
