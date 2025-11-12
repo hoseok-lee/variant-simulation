@@ -20,9 +20,9 @@ $X = \sum_i^n X_i$ will have a mean and variance of
 $$\mu = \sum_i^n \mu_i = \sum_i^n p_i$$
 $$\sigma^2 = \sum_i^n \sigma_i^2 = \sum_i^n p_i (1 - p_i)$$
 
-Due to the Central Limit Theorem (CTL), the total number of variants any
-individual carries is normally distributed with mean $\mu$ and variance
-$\sigma^2$.
+As the [Lyapunov condition](lyapunov_proof.md) is met, the Central Limit Theorem
+(CTL) is applicable. The total number of variants any individual carries is
+normally distributed with mean $\mu$ and variance $\sigma^2$.
 
 The program runs two simulations: (1) the "ground-truth" with repeated Bernoulli
 tests for each individual variant and a KS-test for normality against the
