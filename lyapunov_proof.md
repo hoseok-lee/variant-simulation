@@ -4,7 +4,7 @@ probability of success $p_i$, the mean and variance is given by
 $$\mu_i = p_i$$
 $$\sigma_i^2 = p_i (1 - p_i)$$
 
-Let $\epsilon = 1$ for simplicity. The upper bound for $(2 + \epsilon)$ th 
+Let $\epsilon = 1$ for simplicity. The upper bound for the $(2 + \epsilon)$ th 
 moment of the variates $X_i$ can be computed by assuming that all variables have 
 probability of success $p_i = 0$ and outcome $X_i = 1 \ \forall \ i$.
 
@@ -20,7 +20,7 @@ The lower bound for the sum of variances can be identified by assuming
 $p_i = \alpha \ \forall \ i$ to be an extremely small non-zero probability (in 
 the real-world context, this value would be close to $1 \times 10^{-9}$, or the 
 probability of the variant being present in only one individual from the world 
-population). Our sum of variances has a lower bound
+population). The lower bound becomes
 
 $$
 \begin{align*}
