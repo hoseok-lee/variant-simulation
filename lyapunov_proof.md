@@ -36,10 +36,10 @@ The upper bound for our limit
 
 $$
 \begin{align*}
-\frac{r_n^3}{s_n^3} &\le \frac{n}{\left[ n \alpha (1 - \alpha) \right]^{3/2}} \\
-\lim_{n \to \infty} \ \frac{r_n^3}{s_n^3} &\le \lim_{n \to \infty} \ \frac{n}{\left[ n \alpha (1 - \alpha) \right]^{3/2}} \\
-&\le \frac{1}{\left[ \alpha (1 - \alpha) \right]^{3/2}} \cdot \lim_{n \to \infty} \ \frac{n}{n^{3/2}} \\
-&\le \frac{1}{\left[ \alpha (1 - \alpha) \right]^{3/2}} \cdot \lim_{n \to \infty} \ \frac{1}{n^{1/2}} \\
+\frac{r_n}{s_n} &\le \frac{n^{1/3}}{\left[ n \alpha (1 - \alpha) \right]^{1/2}} \\
+\lim_{n \to \infty} \ \frac{r_n}{s_n} &\le \lim_{n \to \infty} \ \frac{n^{1/3}}{\left[ n \alpha (1 - \alpha) \right]^{1/2}} \\
+&\le \frac{1}{\left[ \alpha (1 - \alpha) \right]^{1/2}} \cdot \lim_{n \to \infty} \ \frac{n^{1/3}}{n^{1/2}} \\
+&\le \frac{1}{\left[ \alpha (1 - \alpha) \right]^{1/2}} \cdot \lim_{n \to \infty} \ \frac{1}{n^{1/6}} \\
 &\le 0
 \end{align*}
 $$
