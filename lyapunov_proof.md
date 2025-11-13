@@ -1,17 +1,19 @@
-Given $X_i$ to be a binomially distributed variable of one test $n = 1$ with
-probability of success $p_i$, the mean and variance is given by
+Given $X_i$ to be a one-test binomially distributed random variable $n = 1$ with 
+probability of success $p_i \in (0, 1]$,
 
 $$\mu_i = p_i$$
 $$\sigma_i^2 = p_i (1 - p_i)$$
 
+We must prove that the mean of a series of binomially distributed variables 
+$X_i$ meets [Lyapunov's condition for the Central Limit Theorem](https://mathworld.wolfram.com/LyapunovCondition.html). 
 Let $\epsilon = 1$ for simplicity. The upper bound for the $(2 + \epsilon)$ th 
 moment of the variates $X_i$ can be computed by assuming that all variables have 
-probability of success $p_i = 0$ and outcome $X_i = 1 \ \forall \ i$.
+probability of success $p_i = 1$ and outcome $X_i = 0 \ \forall \ i$.
 
 $$
 \begin{align*}
-r_n^3 &= \sum_{i = 1}^n | X_i - p_i |^3 \\
-&\le \sum_{i = 1}^n | 1 |^3 \\
+r_n^3 &= \sum_{i = 1}^n \mathbb{E} \ \left[ | X_i - p_i |^3 \right] \\
+&\le \sum_{i = 1}^n \mathbb{E} \ \left[ | 1 |^3 \right] \\
 &\le n
 \end{align*}
 $$
@@ -25,8 +27,8 @@ population). The lower bound becomes
 $$
 \begin{align*}
 s_n^2 &= \sum_{i = 1}^n p_i (1 - p_i) \\
-&\le \sum_{i = 1}^n \alpha (1 - \alpha) \\
-&\le n \alpha (1 - \alpha)
+&\ge \sum_{i = 1}^n \alpha (1 - \alpha) \\
+&\ge n \alpha (1 - \alpha)
 \end{align*}
 $$
 
@@ -34,14 +36,13 @@ The upper bound for our limit
 
 $$
 \begin{align*}
-\frac{r_n}{s_n} &\le \frac{\sqrt[3]{n}}{\sqrt{n \alpha (1 - \alpha)}} \\
-\lim_{n \to \infty} \frac{r_n}{s_n} &\le \lim_{n \to \infty} \frac{\sqrt[3]{n}}{\sqrt{n \alpha (1 - \alpha)}} \\
-&\le \frac{1}{\sqrt{\alpha (1 - \alpha)}} \cdot \lim_{n \to \infty} \frac{n^{1/3}}{n^{1/2}} \\
-&\le \frac{1}{\sqrt{\alpha (1 - \alpha)}} \cdot \lim_{n \to \infty} \frac{1}{n^{1 / 6}} \\
+\frac{r_n^3}{s_n^3} &\le \frac{n}{\left[ n \alpha (1 - \alpha) \right]^{3/2}} \\
+\lim_{n \to \infty} \ \frac{r_n^3}{s_n^3} &\le \lim_{n \to \infty} \ \frac{n}{\left[ n \alpha (1 - \alpha) \right]^{3/2}} \\
+&\le \frac{1}{\left[ \alpha (1 - \alpha) \right]^{3/2}} \cdot \lim_{n \to \infty} \ \frac{n}{n^{3/2}} \\
+&\le \frac{1}{\left[ \alpha (1 - \alpha) \right]^{3/2}} \cdot \lim_{n \to \infty} \ \frac{1}{n^{1/2}} \\
 &\le 0
 \end{align*}
 $$
 
 converges to $0$, therefore the Lyapunov condition must also converge to $0$ as 
-$n \to \infty$. Our condition is met and the Central Limit Theorem is 
-applicable.
+$n \to \infty$. The Central Limit Theorem is applicable.
