@@ -7,8 +7,9 @@ $$\sigma_i^2 = p_i (1 - p_i)$$
 We must prove that the mean of a series of binomially distributed variables 
 $X_i$ meets [Lyapunov's condition for the Central Limit Theorem](https://mathworld.wolfram.com/LyapunovCondition.html). 
 Let $\epsilon = 1$ for simplicity. The upper bound for the $(2 + \epsilon)$ th 
-moment of the variates $X_i$ can be computed by assuming that all variables have 
-probability of success $p_i = 1$ and outcome $X_i = 0 \ \forall \ i$.
+moment of the variates $X_i$ can be simplified by recognizing that the value of
+the random variable is binary $X_i \in \{ 0, 1 \}$ and thus 
+$| X_i - p_i | \in [0, 1)$.
 
 $$
 \begin{align*}
